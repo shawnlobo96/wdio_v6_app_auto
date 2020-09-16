@@ -3,7 +3,7 @@
 - Clone the repo
 
 - `export BROWSERSTACK_USERNAME=username`
-- `export BROWSERSTACK_ACCESS_KEY`
+- `export BROWSERSTACK_ACCESS_KEY=access_key`
 - `export App=bs://<app-id>`
 
 Run `npm i`
