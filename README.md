@@ -4,7 +4,7 @@
 
 - `export BROWSERSTACK_USERNAME=username`
 - `export BROWSERSTACK_ACCESS_KEY=access_key`
-- `export App=bs://<app-id>`
+- `export APP=bs://<app-id>`
 
 Run `npm i`
 
