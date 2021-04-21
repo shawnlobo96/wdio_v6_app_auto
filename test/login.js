@@ -1,14 +1,15 @@
-describe('The test', () => {
-    it('shall type in the email', () => {
-        browser.switchContext("WEBVIEW_com.oneclickbusiness.mobile")
-        const footer = $('.footer');
-        footer.waitForDisplayed();
-        const getStartedButton = footer.$('.button');
-        getStartedButton.click();
-        browser.pause(3000)
-        const emailInput = $('#email .native-input');
-        emailInput.waitForDisplayed();
-        emailInput.setValue("test@example.com")
-        browser.pause(10000)
-    });
-});
+describe('Search Wikipedia Functionality', () => {
+  it('can find search results', async () => {
+    var searchSelector = await $(`~Search Wikipedia`);
+    await searchSelector.waitForDisplayed({ timeout: 30000 });
+    await searchSelector.click();
+
+    var insertTextSelector = await $('android=new UiSelector().resourceId("org.wikipedia.alpha:id/search_src_text")');
+    await insertTextSelector.waitForDisplayed({ timeout: 30000 });
+
+    await insertTextSelector.addValue("Browsertack");
+    await browser.pause(5000);
+
+    var allProductsName = await $$(`android.widget.TextView`);
+    assert(allProductsName.length > 0);
+  });
